@@ -83,6 +83,6 @@ void read_file(FILE *file)
 		}
 		line_number++;
 	}
-	free(buffer);
 	free(head);
+	free(buffer);
 }

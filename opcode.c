@@ -39,18 +39,16 @@ void fun_pall(stack_t **head, unsigned int line_number UNUSED)
 {
 	stack_t *tmp = NULL;
 
-	if (head == NULL)
+	if (head == NULL || *head == NULL)
 		return;
 
-	while ((*head)->next != NULL)
+	while (*head != NULL)
 	{
+		printf("%d\n", (*head)->n);
 		tmp = *head;
 		*head = (*head)->next;
-		printf("%d\n", tmp->n);
 		free(tmp);
 	}
-	printf("%d\n", (*head)->n);
-
 }
 /**
  * fun_push - node creation
@@ -61,23 +59,23 @@ void fun_pall(stack_t **head, unsigned int line_number UNUSED)
 
 void fun_push(stack_t **head, unsigned int line_number UNUSED)
 {
-		stack_t *new_node;
+	stack_t *new_node;
 
-		new_node = malloc(sizeof(stack_t));
-		if (new_node == NULL)
-			return;
+	new_node = malloc(sizeof(stack_t));
+	if (new_node == NULL)
+		return;
 
-		new_node->n = number;
-		new_node->prev = NULL;
-		new_node->next = NULL;
+	new_node->n = number;
+	new_node->prev = NULL;
+	new_node->next = NULL;
 
-		if (head == NULL)
-		{
-			*head = new_node;
-		}
-		else
-		{
-			new_node->next = *head;
-			*head = new_node;
-		}
+	if (head == NULL)
+	{
+		*head = new_node;
+	}
+	else
+	{
+		new_node->next = *head;
+		*head = new_node;
+	}
 }

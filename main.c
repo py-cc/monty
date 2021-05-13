@@ -58,7 +58,14 @@ void read_file(FILE *file)
 	{
 		token = strtok(buffer, " \n");
 
+		/*function_instruc(token, line_number, &head);*/
+
 		cont = 0;
+		if (cont == 0 && strcmp(tmp, "push") == 0)
+		{
+			fprintf(stderr, "L%d: usage: push integer\n", line_number);
+			exit(EXIT_FAILURE);
+		}
 		while (token != NULL)
 		{
 			cont++;
@@ -75,9 +82,9 @@ void read_file(FILE *file)
 				function_instruc(token, line_number, &head);
 			}
 			else if (cont == 1 && (strcmp(token, "pall") == 0))
-			{
 				function_instruc(token, line_number, &head);
-			}
+			else if (cont == 1 && (strcmp(token, "push") != 0) && (strcmp(token, "pall") != 0))
+				function_instruc(token, line_number, &head);
 			tmp = token;
 			token = strtok(NULL, " \n");
 		}

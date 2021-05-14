@@ -112,6 +112,21 @@ void read_file(FILE *file)
 		}
 		line_number++;
 	}
-	free(head);
+	freenodes(head);
 	free(buffer);
+}
+
+void freenodes(stack_t *head)
+{
+	stack_t *tmp;
+
+	if (head == NULL)
+		return;
+
+	while (head != NULL)
+	{
+		tmp = head;
+		head = head->next;
+		free(tmp);
+	}
 }

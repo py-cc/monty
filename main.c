@@ -99,7 +99,7 @@ void read_file(FILE *file)
 			else
 			{
 				fprintf(stderr, "L%d: usage: push integer\n", line_number);
-                                exit(EXIT_FAILURE);
+				exit(EXIT_FAILURE);
 			}
 
 			tmp = token;

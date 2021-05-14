@@ -43,7 +43,7 @@ typedef struct instruction_s
 int number;
 
 
-
+void freenodes(stack_t *head);
 void fun_pop(stack_t **head, unsigned int line_number);
 void fun_swap(stack_t **head, unsigned int line_number);
 void fun_add(stack_t **head, unsigned int line_number);

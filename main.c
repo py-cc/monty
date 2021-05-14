@@ -56,16 +56,10 @@ void read_file(FILE *file)
 	number = 0;
 	while (getline(&buffer, &size_len, file) != EOF)
 	{
+
 		token = strtok(buffer, " \n");
 
-		/*function_instruc(token, line_number, &head);*/
-
 		cont = 0;
-		/*if (cont == 0 && strcmp(tmp, "push") == 0)
-		{
-			fprintf(stderr, "L%d: usage: push integer\n", line_number);
-			exit(EXIT_FAILURE);
-		}*/
 		while (token != NULL)
 		{
 			cont++;
@@ -81,12 +75,40 @@ void read_file(FILE *file)
 				token = tmp;
 				function_instruc(token, line_number, &head);
 			}
+			else if (cont == 1 && (strcmp(token, "push") == 0))
+				token = token;
+
 			else if (cont == 1 && (strcmp(token, "pall") == 0))
+				 function_instruc(token, line_number, &head);
+
+			else if (cont == 1 && (strcmp(token, "pint") == 0))
 				function_instruc(token, line_number, &head);
-			/*else if (cont == 1 && (strcmp(token, "push") != 0) && (strcmp(token, "pall") != 0))
-			function_instruc(token, line_number, &head);*/
+
+			else if (cont == 1 && (strcmp(token, "pop") == 0))
+				function_instruc(token, line_number, &head);
+
+			else if (cont == 1 && (strcmp(token, "swap") == 0))
+				function_instruc(token, line_number, &head);
+
+			else if (cont == 1 && (strcmp(token, "add") == 0))
+				function_instruc(token, line_number, &head);
+
+			else if (cont == 1 && (strcmp(token, "nop") == 0))
+				function_instruc(token, line_number, &head);
+
+			else
+			{
+				fprintf(stderr, "L%d: usage: push integer\n", line_number);
+                                exit(EXIT_FAILURE);
+			}
+
 			tmp = token;
 			token = strtok(NULL, " \n");
+			if ((cont == 1) && (strcmp(tmp, "push") == 0) && (token == NULL))
+			{
+				fprintf(stderr, "L%d: usage: push integer\n", line_number);
+				exit(EXIT_FAILURE);
+			}
 		}
 		line_number++;
 	}

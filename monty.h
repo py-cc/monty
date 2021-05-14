@@ -42,7 +42,14 @@ typedef struct instruction_s
 
 int number;
 
+
+
+void fun_pop(stack_t **head, unsigned int line_number);
+void fun_swap(stack_t **head, unsigned int line_number);
+void fun_add(stack_t **head, unsigned int line_number);
+void fun_nop(stack_t **head, unsigned int line_number);
 void read_file(FILE *file);
+void fun_pint(stack_t **head, unsigned int line_number);
 void fun_pall(stack_t **head, unsigned int line_number UNUSED);
 void function_instruc(char *token, unsigned int, stack_t **head);
 void fun_push(stack_t **head, unsigned int line_number);

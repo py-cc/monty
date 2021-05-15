@@ -69,7 +69,11 @@ void fun_push(stack_t **head, unsigned int line_number UNUSED)
 
 	new_node = malloc(sizeof(stack_t));
 	if (new_node == NULL)
-		return;
+	{
+		fprintf(stderr, "Error: malloc failed\n");
+		freenodes(*head);
+		exit(EXIT_FAILURE);
+	}
 
 	new_node->n = number;
 	new_node->prev = NULL;

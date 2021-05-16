@@ -15,6 +15,7 @@ void opcode(stack_t **head, char *token, unsigned int line_number)
 		{"push", func_push},
 		{"pall", func_pall},
 		{"pint", func_pint},
+		{"pop", func_pop},
 		{NULL, NULL}
 	};
 

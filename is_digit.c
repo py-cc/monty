@@ -1,5 +1,11 @@
 #include "monty.h"
-
+/**
+ * is_digit - check number is negative or number
+ * @UNUSED: argument no used
+ * @value: value to check
+ * @line_number: line to evaluate
+ * Return: number to evaluate
+ */
 
 int is_digit(stack_t **head UNUSED, char *value, unsigned int line_number)
 {

@@ -40,7 +40,7 @@ typedef struct instruction_s
 } instruction_t;
 
 
-void opcode(stack_t **head, char *token, unsigned int line_number, char **buffer, FILE *file);
+void opcode(stack_t **head, char *token, unsigned int line_number);
 void freenodes(stack_t **head);
 void free_all(stack_t **head, char *buffer, FILE *file);
 void func_push(stack_t **head, unsigned int line_number);

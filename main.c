@@ -1,5 +1,10 @@
 #include "monty.h"
-
+/**
+ * main - entry point to program monty
+ * @argc: amount argument
+ * @argv: array of arguments
+ * Return: 0 for success and 1 when it fails.
+ */
 int main(int argc, char **argv)
 {
 
@@ -23,13 +28,13 @@ int main(int argc, char **argv)
 	}
 	while (getline(&buffer, &len, file) != -1)
 	{
-			buffer[strlen(buffer) - 1] = '\0';
-			token = strtok(buffer, " ");
-			if (token != NULL && strcmp(token, "nop") != 0)
-			{
-					opcode(&head, token, line_number, &buffer, file);
-			}
-			line_number++;
+		buffer[strlen(buffer) - 1] = '\0';
+		token = strtok(buffer, " ");
+		if (token != NULL && strcmp(token, "nop") != 0)
+		{
+			opcode(&head, token, line_number);
+		}
+		line_number++;
 	}
 	free(buffer);
 	freenodes(&head);

@@ -1,8 +1,7 @@
 #include "monty.h"
 /**
- * pall_stack - Print all of the data in double linkedlist.
+ * func_pall - Print all of the data in double linkedlist.
  * @head: Pointer head of the double linkedlist.
- * @line_number: line number of bytecode file.
  * @UNUSED: macro
  *
  */

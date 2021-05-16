@@ -1,6 +1,6 @@
 #include "monty.h"
 /**
- * free_stack - Function that frees a double linked list (stack).
+ * freenodes - Function that frees a double linked list (stack).
  * @head: Head of the double linked list.
  *
  */

@@ -51,4 +51,5 @@ void func_add(stack_t **head, unsigned int line_number);
 void func_swap(stack_t **head, unsigned int line_number);
 void func_nop(stack_t **head, unsigned int line_number);
 int is_digit(stack_t **head, char *value, unsigned int line_number);
+size_t len_stack(stack_t *head);
 #endif /* MONTY_H */

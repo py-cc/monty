@@ -14,6 +14,7 @@ void opcode(stack_t **head, char *token, unsigned int line_number)
 	instruction_t command[] = {
 		{"push", func_push},
 		{"pall", func_pall},
+		{"pint", func_pint},
 		{NULL, NULL}
 	};
 

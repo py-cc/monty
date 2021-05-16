@@ -2,9 +2,15 @@
 
 void func_pop(stack_t **head, unsigned int line_number)
 {
-	if(*head)
+	stack_t *tmp = NULL;
+
+	if(*head && head)
 	{
-		*head = (*head)->next;
+		tmp = *head;
+		*head = tmp->next;
+		if(tmp->next != NULL)
+			tmp->next->prev = NULL;
+		free(tmp);
 	}
 	else
 	{
